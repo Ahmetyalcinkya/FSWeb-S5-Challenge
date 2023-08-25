@@ -13,9 +13,7 @@ const Header = (baslik, tarih, yazi) => {
   span2.classList.add("temp");
   span2.textContent = yazi;
 
-  headDiv.appendChild(span);
-  headDiv.appendChild(h1);
-  headDiv.appendChild(span2);
+  headDiv.append(span, h1, span2);
 
   return headDiv;
   // GÖREV 1

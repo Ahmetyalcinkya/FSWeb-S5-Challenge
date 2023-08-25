@@ -1,3 +1,4 @@
+import axios from "axios";
 const Card = (makale) => {
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card"); //1.div

@@ -1,3 +1,4 @@
+import axios from "axios";
 const Tablar = (konu) => {
   const topicD = document.createElement("div");
   topicD.classList.add("topics");
@@ -22,6 +23,7 @@ const Tablar = (konu) => {
   //   <div class="tab">teknoloji</div>
   // </div>
   //
+  return topicD;
 };
 
 const tabEkleyici = (secici) => {
@@ -31,11 +33,7 @@ const tabEkleyici = (secici) => {
     .get("http://localhost:5001/api/konular")
     .then((res) => {
       console.log(res.data);
-      for (let key in res.data.konular) {
-        for (let i = 0; i < res.data.konular[key].length; i++) {
-          tab.appendChild(Tablar(res.data.konular[key][i]));
-        }
-      }
+      tab.append(Tablar(res.data.konular));
     })
     .catch((err) => {
       console.log(err);
